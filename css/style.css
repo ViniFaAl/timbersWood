@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+
+.limitar-secao {
+    width: 100%;
+    max-width: 1540px;
 }
 
 /*Banner e topo*/
@@ -45,12 +51,15 @@
     margin: 0 35px;
 }
 
+.topo a:hover {
+    color: #9e774b;
+    border-bottom: 2px solid;
+}
+
 /*Home*/
 .container-home {
     width: 100%;
-    max-width: 1900px;
-    height: 90vh;
-    max-height: 860px;
+    height: auto;
     margin: 0px auto;
     text-align: center;
     display: flex;
@@ -61,7 +70,6 @@
 .container-home .texto {
     width: 600px;
     margin: 0px auto;
-    padding: 73px 0px;
     color: #8F5613;
 }
 
@@ -75,81 +83,86 @@
     line-height: 36px;
 }
 
-.container-home .imagem img {
+.imagem img {
     width: 500px;
     height: 500px; 
-    box-shadow: 0px 0px 10px 7px black;
+    box-shadow: 0px 0px 60px 6px #8f5613;
 }
 
 /*Compra dos moveis*/
 .container-comprar {
     width: 100%;
-    height: 90vh;
-    max-width: 1900px;
-    min-width: 500px;
-    max-height: 860px;
+    height: auto;
     margin: 0px auto;
+    padding: 80px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: #D9D9D9;
 }
 
 .container-comprar h2 {
-    padding: 60px;
     font-size: 40px;
     color: #8F5613;
-}
-
-.container-comprar .container-imagem {
-    margin-bottom: 70px;
-    height: 300px;
+    margin: 0px auto 20px auto;
 }
 
 .container-imagem {
+    height: 300px;
+    margin: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.container-imagem div {
-    margin-right: 30px;
-}
-
-.container-imagem div p{
-    width: 190px;
-    margin-top: 50px;
-    background-color: #f1f1f1;
-    border-radius: 50%;
+.container-imagem figcaption{
     padding: 10px;
-    border: 1px solid #8F5613;
-    box-shadow: 0px 0px 10px 7px black; 
+    color: #EDEADE;
+    font-size: 20px;
 }
 
-.container-comprar .container-imagem img {
+.container-imagem figcaption:hover {
+    background-color: #EDEADE;
+    color: #86561f;
+}
+
+.container-imagem figure {
+    background-color: #86561f;
+    width: 200px;
+}
+
+.container-imagem img {
     width: 200px;
     height: 250px;
     background-size: cover;
     margin-right: 25px;
-    box-shadow: 10px 10px 15px 7px black
+    background-color: #86561f;
+    box-shadow: 0px 0px 5px 3px #86561f;
 }
 
-.container-comprar p {
+.container-chamada p {
     font-size: 36px;
     color: #8F5613;
 }
 
-.container-chamada p {
-    margin-top: 170px;
-}
 .container-chamada span {
     color: #8F5613;
     font-weight: 700;
     text-decoration: underline;
 }
 
+.container-chamada span:hover {
+    color: #EDEADE;
+    padding: 10px;
+    background-color: #86561f;
+}
+
 /*Sobre*/
 .container-sobre {
     width: 100%;
-    height: 70vh;
     text-align: center;
     margin: 0px auto;
     background-color: #EDEADE;
@@ -170,28 +183,33 @@
 /*Rede socias*/
 .container-rede-sociais {
     width: 100%;
-    height: 50vh;
+    height: auto;
     text-align: center;
     margin: 0px auto;
     background-color: #D9D9D9;
-    padding: 100px;
     color: #8F5613;
+    padding: 50px;
 }   
 
 .container-rede-sociais span {
     font-size: 30px;
-    
 }
 
 .container-rede-sociais p {
     font-size: 20px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-.container-rede-sociais .img-rede-sociais img{
-    width: 150px;
-    margin-right: 20px;
+.img-rede-sociais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-rede-sociais img{
+    width: 100px;
+    margin-right: 40px;
 }
 
 .rodape {
@@ -206,4 +224,132 @@
 .rodape p {
     font-size: 20px;
     margin-top: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .texto {
+        width: 400px;
+        padding: 20px;
+    }
+
+    .texto h2 {
+        font-size: 30px;
+    }
+
+    .container-home .texto p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .imagem img {
+        margin-top: 20px;
+        width: 350px;
+        height: 350px;
+        box-shadow: 0 0 0 0 ;
+    }
+
+    .container-imagem {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .container-home .imagem {
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .container-home .texto p {
+        font-size: 20px;
+    }
+
+    .imagem img {
+        display: none;
+    }
+
+    .container-comprar h2 {
+        font-size: 27px;
+    }
+
+    .container-comprar p{
+        font-size: 22px;
+    }
+
+    .container-sobre p {
+        font-size: 20px;
+    }
+
+    .img-rede-sociais img {
+        width: 70px;
+    }
+
+    .rodape p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .topo {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .topo a {
+        font-size: 18px;
+    }
+
+    .container-banner h1 {
+        font-size: 46px;
+    }
+
+    .container-comprar {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-comprar h2{
+        margin-top: 50px;
+        margin-bottom: 40px;  
+    }
+
+    .container-chamada p {
+        padding-bottom: 30px;
+    }
+
+    .container-comprar .subtitulo {
+        padding: 10px;
+    }
+
+    .container-comprar .container-imagem {
+        margin-top: 20px;
+    }
+    
+    .container-home .texto h2, .container-sobre h2 {
+        font-size: 30px;
+    }
+
+    .container-home .texto p, .container-sobre p {
+        font-size: 18px;
+    }
+
+    .img-rede-sociais {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .img-rede-sociais img {
+        margin: 0 auto;
+        width: 40px;
+    }
+
+    .rodape p {
+        font-size: 14px;
+    }
+
 }
